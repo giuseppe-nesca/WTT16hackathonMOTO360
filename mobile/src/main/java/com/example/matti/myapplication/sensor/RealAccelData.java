@@ -47,8 +47,9 @@ public class RealAccelData {
         addData(ax,ay,az);
 
         posture_recognition(window, ay);
+        fall_recognition(window);
 
-        systemState(curr_state,prev_state);
+        systemState(curr_state, prev_state);
 
         if(!prev_state.equalsIgnoreCase(curr_state)) {
             prev_state=curr_state;
@@ -74,6 +75,20 @@ public class RealAccelData {
         }
     }
 
+    private void fall_recognition(double[] window2) {
+        Double min = null, max = null;
+
+        for(double aWindow2 : window2) {
+            if(min == null) min = aWindow2;
+            if(max == null) max = aWindow2;
+            if(min > aWindow2) min = aWindow2;
+            if(max < aWindow2) max = aWindow2;
+        }
+
+        double delta = Math.abs(max - min);
+        if(delta > 9.8*2) curr_state = "fall";
+    }
+
     private int compute_zrc(double[] window2) {
 
         int count=0;
@@ -87,7 +102,7 @@ public class RealAccelData {
         return count;
     }
 
-    private void systemState(String curr_state1,String prev_state1) {
+    private void systemState(String curr_state1, String prev_state1) {
 
         //Fall !!
         if(!prev_state1.equalsIgnoreCase(curr_state1)){
