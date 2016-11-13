@@ -15,21 +15,29 @@ import android.widget.Toast;
 
 import static java.lang.Math.round;
 
+import com.loopj.android.http.*;
+
+import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.entity.StringEntity;
+
 public class MainActivity extends AppCompatActivity {
 
     private LocationListener locationListener = null;
+
+    public JsonManager containerDati;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        JsonManager containerDati = new JsonManager(getApplicationContext());
-        if(containerDati.isUserRegistered()){
+        containerDati = new JsonManager(getApplicationContext());
+        if (containerDati.isUserRegistered()) {
             setContentView(R.layout.activity_main2);
             TextView nomeLabel = (TextView) findViewById(R.id.nome2);
             nomeLabel.setText(containerDati.readField("name"));
-        }else{
+        } else {
             setContentView(R.layout.activity_main);
         }
 
@@ -56,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
             if (locationManager != null) {
                 location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 if (location != null) {
-                    loc[0] = round(location.getLatitude()*10000)/10000.0;
-                    loc[1] = round(location.getLongitude()*10000)/10000.0;
+                    loc[0] = round(location.getLatitude() * 10000) / 10000.0;
+                    loc[1] = round(location.getLongitude() * 10000) / 10000.0;
                 }
             }
         }
@@ -67,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //onClick listener del pulsante Salva per salvare dati relativi all'utente
-    public void onClickSalva(View view){
+    public void onClickSalva(View view) {
         EditText nome = (EditText) findViewById(R.id.nome);
         EditText cognome = (EditText) findViewById(R.id.cognome);
         EditText sangue = (EditText) findViewById(R.id.sangue);
@@ -83,9 +91,42 @@ public class MainActivity extends AppCompatActivity {
         nomeLabel.setText(containerDati.readField("name"));
     }
 
-    public void onClickChangeActivity(View view)
-    {
+    public void onClickChangeActivity(View view) {
         setContentView(R.layout.activity_main);
 
     }
+
+    public void onClickTestServer(View view) {
+        AsyncHttpClient client = new AsyncHttpClient();
+        double[] coord = coordinateGPS(view);
+
+        try {
+            StringEntity entity = new StringEntity(containerDati.getJSONStringToSend(coord[0],coord[1],"+393924953670"));
+            client.post(getApplicationContext(), "http://192.168.43.158/wtt/server.php", entity, "application/json", new AsyncHttpResponseHandler() {
+
+                @Override
+                public void onSuccess(int a, Header[] b, final byte[] d) {
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+                @Override
+                public void onFailure(int a, Header[] b, byte[] d, Throwable e) {
+                    Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
+                }
+
+
+                @Override
+                public void onFinish() {
+                    Toast.makeText(getApplicationContext(), "Finish", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+
+        }
+
+    }
 }
+
+

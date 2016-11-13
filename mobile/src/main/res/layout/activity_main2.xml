@@ -25,6 +25,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/btnChangeWrapper"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -38,6 +39,18 @@
             android:textSize="30sp"
             android:textColor="@color/scenario_title"
             android:gravity="center" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:theme="@style/TextInput">
+
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
@@ -47,6 +60,18 @@
             android:textColor="@color/scenario_title"
             android:onClick="onClickChangeActivity"
             android:layout_gravity="center"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnChange"
+            android:text="PROVA"
+            android:textSize="15sp"
+            android:textColor="@color/scenario_title"
+            android:onClick="onClickTestServer"
+            android:layout_gravity="center"/>
+
+
     </android.support.design.widget.TextInputLayout>
 
 

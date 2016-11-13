@@ -318,11 +318,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/neskov/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_56f83019de952fd08d06f8b9aeae8521346c3e62/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="a5c2b8892d7a48eff66d88d912bc359414c7c4b5">
+        sha1="a2ffb71374949483f4e2dc3ec4e0607a591a1a67">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_61bc3815b88e869aa956633ad4b406d2fb27683f/classes.dex" />
     </item>
     <item
@@ -369,6 +378,15 @@
         revision="25.0.0"
         sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_03a2454ede97e21981e8f8806faba9acaaae4933/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/neskov/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_254ffbce6552252c38af5ac981a555fd4eb2dcee/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -475,7 +493,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="8e57432d5e4876dfc7bf807418649baaa8a76278">
+        sha1="7700dd704e53959c6b1c93bc5dadaefb152787af">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4dacc7d1957ee25dbda6af01ea44d965c7da05c6/classes.dex" />
     </item>
     <item
