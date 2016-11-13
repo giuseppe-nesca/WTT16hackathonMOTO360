@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import static java.lang.Math.round;
 
+import com.example.matti.myapplication.sensor.SensorReceiverService;
 import com.loopj.android.http.*;
 
 import cz.msebera.android.httpclient.Header;
@@ -27,13 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
     public JsonManager containerDati;
 
-
+    private SensorReceiverService sensorReceiverService;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sensorReceiverService = new SensorReceiverService();
 
         containerDati = new JsonManager(getApplicationContext());
         if (containerDati.isUserRegistered()) {
@@ -58,6 +62,26 @@ public class MainActivity extends AppCompatActivity {
 //        EventBus.getDefault().register(this);
 //    }
 
+
+    public void heartAttack() {
+        sensorReceiverService.setListener(SensorReceiverService.EventType.HEART_ATTACK, new SensorReceiverService.SensedEventListener() {
+            @Override
+            public void onEventSensed(SensorReceiverService.Event event) {
+                // Handle heart attack
+            }
+        });
+    }
+    public void fall() {
+        sensorReceiverService.setListener(SensorReceiverService.EventType.FALL, new SensorReceiverService.SensedEventListener() {
+            @Override
+            public void onEventSensed(SensorReceiverService.Event event) {
+                Log.i("wear; ", "cadutoooo");
+                sendToServer("caduta");
+
+
+            }
+        });
+    }
 
     //Restituisce un vettore di due valori double il primo e latitudine e il secondo longitudine
     public double[] coordinateGPS() {
@@ -177,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
     }

@@ -8,7 +8,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.HashMap;
 
-public class SensorReceiverService extends WearableListenerService {
+import de.greenrobot.event.EventBus;
+
+public class SensorReceiverService {
 
     // Capability codes shared with the wear application
     private static final String ACCELEROMETER_SENSING_CAPABILITY = "acceleration_sensing";
@@ -53,17 +55,23 @@ public class SensorReceiverService extends WearableListenerService {
 
     public SensorReceiverService() {
         listeners = new HashMap<>();
+
+        EventBus.getDefault().register(this);
     }
 
     public void setListener(EventType type, SensedEventListener listener) {
         listeners.put(type, listener);
     }
 
-    @Override
-    public void onMessageReceived(MessageEvent messageEvent) {
-        byte[] data = messageEvent.getData();
+    public void onMessageReceived(byte[] payload) {
+        int type = payload[0];
 
-        if (messageEvent.getPath().equals(ACCELEROMETER_SENSING_CAPABILITY)) {
+        byte[] data = new byte[payload.length-1];
+
+        for(int i = 0; i < data.length; i++)
+            data[i] = payload[i+1];
+
+        if (type == 1) {
             byte[] dataX = {data[0], data[1], data[2]};
             byte[] dataY = {data[3], data[4], data[5]};
             byte[] dataZ = {data[6], data[7], data[8]};
@@ -76,23 +84,28 @@ public class SensorReceiverService extends WearableListenerService {
             if (listeners.get(EventType.FALL) != null && SensedEventsUtils.hasFallen(x, y, z)) {
                 Event e = new Event();
                 e.setType(EventType.FALL);
-                e.setMessage(getBaseContext().getString(R.string.user_fallen));
+                e.setMessage("User fallen");
                 listeners.get(EventType.FALL).onEventSensed(e);
-            } else if (messageEvent.getPath().equals(HEART_RATE_SENSING_CAPABILITY)) {
-                float heartRate = ByteBuffer.wrap(data).order(ByteOrder.LITTLE_ENDIAN).getFloat();
-
-                boolean heartAttack = SensedEventsUtils.hasHeartAttack(heartRate);
-                boolean faint = SensedEventsUtils.hasFaint(heartRate);
-
-                // Handle heart rate sensor related events
-                if (listeners.get(EventType.HEART_ATTACK) != null && (heartAttack || faint)) {
-                    Event e = new Event();
-                    if (heartAttack) e.setType(EventType.HEART_ATTACK);
-                    if (faint) e.setType(EventType.FAINT);
-                    e.setMessage(getBaseContext().getString(R.string.heart_attack));
-                    listeners.get(EventType.HEART_ATTACK).onEventSensed(e);
-                }
             }
         }
+        else if (type == 2) {
+            float heartRate = ByteBuffer.wrap(data).order(ByteOrder.LITTLE_ENDIAN).getFloat();
+
+            boolean heartAttack = SensedEventsUtils.hasHeartAttack(heartRate);
+            boolean faint = SensedEventsUtils.hasFaint(heartRate);
+
+            // Handle heart rate sensor related events
+            if (listeners.get(EventType.HEART_ATTACK) != null && (heartAttack || faint)) {
+                Event e = new Event();
+                if (heartAttack) e.setType(EventType.HEART_ATTACK);
+                if (faint) e.setType(EventType.FAINT);
+                e.setMessage("Heart attack");
+                listeners.get(EventType.HEART_ATTACK).onEventSensed(e);
+            }
+        }
+    }
+
+    public void onEvent(byte[] data) {
+        onMessageReceived(data);
     }
 }

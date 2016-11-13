@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 
+import com.example.matti.myapplication.Utils;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.wearable.CapabilityApi;
@@ -17,6 +18,8 @@ import com.google.android.gms.wearable.Node;
 import com.google.android.gms.wearable.Wearable;
 
 import java.util.Set;
+
+import de.greenrobot.event.EventBus;
 
 public class SensingService extends IntentService implements GoogleApiClient.ConnectionCallbacks {
 
@@ -29,7 +32,7 @@ public class SensingService extends IntentService implements GoogleApiClient.Con
             float rate = sensorEvent.values[0];
 
             // Send information to the connected node
-            requestSensing(wtt.wtt16hack.Utils.floatToByte(rate), heartRateNodeId, HEART_RATE_SENSING_CAPABILITY);
+            requestSensing(Utils.floatToByte(rate), (byte) 2, heartRateNodeId, HEART_RATE_SENSING_CAPABILITY);
         }
 
         @Override
@@ -49,9 +52,9 @@ public class SensingService extends IntentService implements GoogleApiClient.Con
             float accZ = sensorEvent.values[2];
 
             // Send information to the connected node
-            byte[] x = wtt.wtt16hack.Utils.floatToByte(accX);
-            byte[] y = wtt.wtt16hack.Utils.floatToByte(accY);
-            byte[] z = wtt.wtt16hack.Utils.floatToByte(accZ);
+            byte[] x = Utils.floatToByte(accX);
+            byte[] y = Utils.floatToByte(accY);
+            byte[] z = Utils.floatToByte(accZ);
 
             byte[] payload = new byte[3*x.length];
 
@@ -61,7 +64,7 @@ public class SensingService extends IntentService implements GoogleApiClient.Con
                 if(i >= 6 && i < 9) payload[i] = z[i % (2*z.length)];
             }
 
-            requestSensing(payload, accelerometerNodeId, ACCELEROMETER_SENSING_CAPABILITY);
+            requestSensing(payload, (byte) 1, accelerometerNodeId, ACCELEROMETER_SENSING_CAPABILITY);
         }
 
         @Override
@@ -164,8 +167,15 @@ public class SensingService extends IntentService implements GoogleApiClient.Con
         return bestNodeId;
     }
 
-    private void requestSensing(byte[] data, String transcriptionNodeId, String capability) {
-        if (transcriptionNodeId != null) {
+    private void requestSensing(byte[] data, byte type, String transcriptionNodeId, String capability) {
+        byte[] payload = new byte[data.length+1];
+
+        payload[0] = 1;
+        for(int i = 1; i < payload.length; i++)
+            payload[i] = data[i-1];
+
+        EventBus.getDefault().post(new String(payload));
+        /*if (transcriptionNodeId != null) {
             Wearable.MessageApi.sendMessage(mGoogleApiClient, transcriptionNodeId,
                     capability, data).setResultCallback(
                     new ResultCallback<MessageApi.SendMessageResult>() {
@@ -179,7 +189,7 @@ public class SensingService extends IntentService implements GoogleApiClient.Con
             );
         } else {
             // Unable to retrieve node with transcription capability
-        }
+        }*/
     }
 
 }

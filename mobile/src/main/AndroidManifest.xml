@@ -21,12 +21,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".sensor.SensorReceiverService" android:exported="false"
-            android:enabled="true">
-            <intent-filter>
-                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
-            </intent-filter>
-        </service>
         <service android:name=".MessageListenerService"> <intent-filter> <action android:name="com.google.android.gms.wearable.BIND_LISTENER" /> </intent-filter> </service>
     </application>
 

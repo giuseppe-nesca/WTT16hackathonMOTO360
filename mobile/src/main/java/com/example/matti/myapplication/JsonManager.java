@@ -1,6 +1,7 @@
 package com.example.matti.myapplication;
 
         import android.content.Context;
+        import android.util.Log;
         import android.widget.Toast;
 
         import java.util.Date;
@@ -119,7 +120,8 @@ public class JsonManager {
             alert.put("contact", contact);
             alert.put("timestamp", (new Date()).getTime()/1000);
             root.put("alert", alert);
-            Toast.makeText(current_context, root.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(current_context, root.toString(), Toast.LENGTH_SHORT).show();
+            Log.d("MANDO","MANDO");
             return root.toString();
         }
         catch (Throwable t)
