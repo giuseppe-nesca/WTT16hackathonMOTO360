@@ -93,6 +93,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_eee365bf5398e952256f0a4e2d587325b589f10c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -108,6 +117,15 @@
         revision="25.0.0"
         sha1="289cad663c288ce965463cb9ece8b35cc7de0fac">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.8.0_c19dd595fcd3b11111e928bc9f2d1f76508bfd70/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="10077a946c92e05042e9fc4833dd8cd9cb930a6b">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_775b92eda3091ed8f2cf44313e9bc7d53021e96f/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -183,6 +201,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_a1986f29f5ac93e5405dfe771cee44e20fd6a9df/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -234,6 +261,15 @@
         revision="25.0.0"
         sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_cbbf93ff52055a0bda5ea67e867f13fa29f4bb80/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.google.android.support/wearable/2.0.0-alpha3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3202db513a724413357b6189c481d88004a97b79">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.support-wearable-2.0.0-alpha3_1008841c4fa4189fc578d55d785b6828b3e20007/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -331,7 +367,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="a2ffb71374949483f4e2dc3ec4e0607a591a1a67">
+        sha1="aa7fe6c362b94f20c1e0a679c2c9c716e5dfd5ae">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_61bc3815b88e869aa956633ad4b406d2fb27683f/classes.dex" />
     </item>
     <item
@@ -372,6 +408,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="21e6da0d860e68fabb383157f40f8e8b0d946e30">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_301179dc9ea6517c1a6c8d9ad227f1635e355dc6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
         jumboMode="true"
         optimize="true"
@@ -399,12 +444,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_aad10f47f12269a8022d551afea4ce445887ece2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="7e92aadd0697922316d1395c1887a23aebec640a">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_3d9fdb10db3d5bfca607d3f7b999c553d3c6dfa1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/neskov/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_e23298e7e758387639a261d3c560d11f1aec942c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -444,12 +507,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_ea2d84856b85e96ad5c0db8540c3eb332b05ddae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_81ee0e2a3f223784cef24ea2f992c4deba63ac21/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0b8e087da59c0b062c33f49a335e59f907086da2">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.8.0_59221e79c341e514562038135280889dbbae247b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -493,7 +574,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="7700dd704e53959c6b1c93bc5dadaefb152787af">
+        sha1="7dc201dd98c34b3739f116ca8564a4e984437260">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4dacc7d1957ee25dbda6af01ea44d965c7da05c6/classes.dex" />
     </item>
     <item
@@ -543,6 +624,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/neskov/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.4.0/ddd166d01b3158d1c00576d29f7ed15c030df719/eventbus-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/eventbus-2.4.0_c3504a3b5584b2b74ab0ae6fd73d9d061bb63113/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -558,6 +648,15 @@
         revision="25.0.0"
         sha1="363a20f1d25336e827dd24020f2ecdc42d62638f">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.8.0_f8c73518e5f48772ebf6fca7a8e151e759b72259/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.0.1_5c391a312f5da807ad72554f238893394a50f3a1/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -612,6 +711,15 @@
         revision="25.0.0"
         sha1="a30aea7df545072ad3c06f56b2efc13e67222140">
         <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.8.0_1af492dd45757fae07f727bb98784b0d01bc4227/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/home/neskov/AndroidStudioProjects/WTT16hackathonMOTO360/wear/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_843c72f3a8c20dad18c76949fbe55660a6a09bad/classes.dex" />
     </item>
     <item
         is-multidex="true"

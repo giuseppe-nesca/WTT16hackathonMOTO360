@@ -19,12 +19,15 @@ import com.loopj.android.http.*;
 
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.entity.StringEntity;
+import de.greenrobot.event.EventBus;
 
 public class MainActivity extends AppCompatActivity {
 
     private LocationListener locationListener = null;
 
     public JsonManager containerDati;
+
+
 
 
     @Override
@@ -40,11 +43,24 @@ public class MainActivity extends AppCompatActivity {
         } else {
             setContentView(R.layout.activity_main);
         }
-
+        EventBus.getDefault().register(this);
     }
 
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        EventBus.getDefault().unregister(this);
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        EventBus.getDefault().register(this);
+//    }
+
+
     //Restituisce un vettore di due valori double il primo e latitudine e il secondo longitudine
-    public double[] coordinateGPS(View view) {
+    public double[] coordinateGPS() {
 
         //location
         double loc[] = new double[2];
@@ -96,9 +112,47 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public void sendToServer(String string) {
+        AsyncHttpClient client = new AsyncHttpClient();
+        double[] coord = coordinateGPS();
+        string="Tipo di segnalazione: "+string;
+
+        try {
+            StringEntity entity = new StringEntity(containerDati.getJSONStringToSend(coord[0],coord[1],string,"+393924953670"));
+            client.post(getApplicationContext(), "http://192.168.43.158/wtt/server.php", entity, "application/json", new AsyncHttpResponseHandler() {
+
+                @Override
+                public void onSuccess(int a, Header[] b, final byte[] d) {
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+                @Override
+                public void onFailure(int a, Header[] b, byte[] d, Throwable e) {
+                    Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
+                }
+
+
+                @Override
+                public void onFinish() {
+                    Toast.makeText(getApplicationContext(), "Finish", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+
+        }
+
+    }
+
+
+
+
+
     public void onClickTestServer(View view) {
         AsyncHttpClient client = new AsyncHttpClient();
-        double[] coord = coordinateGPS(view);
+        double[] coord = coordinateGPS();
 
         try {
             StringEntity entity = new StringEntity(containerDati.getJSONStringToSend(coord[0],coord[1],"+393924953670"));
@@ -126,6 +180,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    public void onEvent(String message){
+        sendToServer(message);
     }
 }
 
