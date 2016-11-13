@@ -81,7 +81,8 @@ public class JsonManager {
             return new String("");
         try {
             JSONObject user = new JSONObject(user_string);
-            return user.getJSONObject(field).toString();
+            //return user.getJSONObject(field).toString();
+            return user.getString(field);
         }
         catch (Throwable t)
         {
