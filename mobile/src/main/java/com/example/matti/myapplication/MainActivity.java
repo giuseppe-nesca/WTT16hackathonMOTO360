@@ -77,5 +77,15 @@ public class MainActivity extends AppCompatActivity {
 
         JsonManager containerDati = new JsonManager(getApplicationContext());
         containerDati.registerUser(nome.getText().toString(), cognome.getText().toString(), sangue.getText().toString(), Integer.parseInt(eta.getText().toString()), sesso.getText().toString(), Integer.parseInt(peso.getText().toString()));
+
+        setContentView(R.layout.activity_main2);
+        TextView nomeLabel = (TextView) findViewById(R.id.nome2);
+        nomeLabel.setText(containerDati.readField("name"));
+    }
+
+    public void onClickChangeActivity(View view)
+    {
+        setContentView(R.layout.activity_main);
+
     }
 }

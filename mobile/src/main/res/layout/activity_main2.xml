@@ -38,6 +38,15 @@
             android:textSize="30sp"
             android:textColor="@color/scenario_title"
             android:gravity="center" />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnChange"
+            android:text="change user"
+            android:textSize="15sp"
+            android:textColor="@color/scenario_title"
+            android:onClick="onClickChangeActivity"
+            android:layout_gravity="center"/>
     </android.support.design.widget.TextInputLayout>
 
 
