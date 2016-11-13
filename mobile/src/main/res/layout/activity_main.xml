@@ -38,7 +38,7 @@
             android:layout_below="@+id/title_settings"
             android:theme="@style/TextInput">
             <EditText
-                android:id="@+id/input_ip_address"
+                android:id="@+id/nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -57,7 +57,7 @@
             android:layout_below="@+id/text_ip_address"
             android:theme="@style/TextInput">
             <EditText
-                android:id="@+id/input_vpn_address"
+                android:id="@+id/cognome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -76,7 +76,7 @@
             android:layout_below="@+id/vpn_address"
             android:theme="@style/TextInput">
             <EditText
-                android:id="@+id/input_time_out"
+                android:id="@+id/sangue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -95,13 +95,70 @@
             android:layout_below="@+id/time_out"
             android:theme="@style/TextInput">
             <EditText
-                android:id="@+id/input_retry"
+                android:id="@+id/eta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="ETA"
                 android:textSize="15sp"
                 android:textColor="@color/scenario_title"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cont1"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/retry_number"
+            android:theme="@style/TextInput">
+            <EditText
+                android:id="@+id/sesso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="SESSO"
+                android:textSize="15sp"
+                android:textColor="@color/scenario_title"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container2"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/cont1"
+            android:theme="@style/TextInput">
+            <EditText
+                android:id="@+id/peso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="PESO"
+                android:textSize="15sp"
+                android:textColor="@color/scenario_title"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container_button"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/container2"
+            android:theme="@style/TextInput">
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSalva"
+                android:text="SALVA"
+                android:textSize="15sp"
+                android:textColor="@color/scenario_title"
+                android:onClick="onClickSalva"/>
         </android.support.design.widget.TextInputLayout>
 
     </RelativeLayout>

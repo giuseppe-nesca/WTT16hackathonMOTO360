@@ -9,6 +9,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static java.lang.Math.round;
@@ -21,6 +23,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        JsonManager containerDati = new JsonManager(getApplicationContext());
+        if(containerDati.isUserRegistered()){
+            setContentView(R.layout.activity_main2);
+            TextView nomeLabel = (TextView) findViewById(R.id.nome2);
+            nomeLabel.setText(containerDati.readField("name"));
+        }else{
+            setContentView(R.layout.activity_main);
+        }
+
     }
 
     //Restituisce un vettore di due valori double il primo e latitudine e il secondo longitudine
@@ -52,5 +64,18 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this, "Help me at (" + String.valueOf(loc[0]) + ", " + String.valueOf(loc[1]) + ")", Toast.LENGTH_SHORT).show();
 
         return loc;
+    }
+
+    //onClick listener del pulsante Salva per salvare dati relativi all'utente
+    public void onClickSalva(View view){
+        EditText nome = (EditText) findViewById(R.id.nome);
+        EditText cognome = (EditText) findViewById(R.id.cognome);
+        EditText sangue = (EditText) findViewById(R.id.sangue);
+        EditText eta = (EditText) findViewById(R.id.eta);
+        EditText peso = (EditText) findViewById(R.id.peso);
+        EditText sesso = (EditText) findViewById(R.id.sesso);
+
+        JsonManager containerDati = new JsonManager(getApplicationContext());
+        containerDati.registerUser(nome.getText().toString(), cognome.getText().toString(), sangue.getText().toString(), Integer.parseInt(eta.getText().toString()), sesso.getText().toString(), Integer.parseInt(peso.getText().toString()));
     }
 }

@@ -16,7 +16,7 @@ public class JsonManager {
 
     // get user info and save it to local json file
     // return value: true --> operation done, false --> operation failed
-    public Boolean registerUser(String name, String surname, String blood)
+    public Boolean registerUser(String name, String surname, String blood, int age, String sex, int weight)
     {
 
         try
@@ -26,6 +26,9 @@ public class JsonManager {
             user.put("name", name);
             user.put("surname", surname);
             user.put("blood", blood);
+            user.put("age", age);
+            user.put("sex", sex);
+            user.put("weight", weight);
             root.put("user", user);
 
             // write to file
@@ -69,6 +72,22 @@ public class JsonManager {
         {
             return new String("");
         }
+    }
+
+    public String readField(String field)
+    {
+        String user_string = readUser();
+        if (user_string.length() == 0)
+            return new String("");
+        try {
+            JSONObject user = new JSONObject(user_string);
+            return user.getJSONObject(field).toString();
+        }
+        catch (Throwable t)
+        {
+            return new String("errore");
+        }
+
     }
 
     public Boolean isUserRegistered()

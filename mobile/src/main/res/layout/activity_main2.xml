@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/monitoring1"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:theme="@style/TextInput">
+        <TextView
+            android:id="@+id/monitoring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MONITORING"
+            android:textSize="40sp"
+            android:textColor="@color/scenario_title"
+            android:gravity="center" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/monitoring1"
+        android:theme="@style/TextInput">
+        <TextView
+            android:id="@+id/nome2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NAME UNFOUND"
+            android:textSize="30sp"
+            android:textColor="@color/scenario_title"
+            android:gravity="center" />
+    </android.support.design.widget.TextInputLayout>
+
+
+</LinearLayout>
